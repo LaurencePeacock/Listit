@@ -2,6 +2,10 @@ let newListInput = document.getElementById('new-list');
 let submit = document.getElementById('submit');
 let wrapper = document.getElementById('wrapper');
 
+const audio = new Audio();
+audio.src = "./ListIt Assets/complete.mp3";
+audio.preload = "auto";
+
 let listsArray = [];
 
 //we take the string from the input field and create a new list object
@@ -81,7 +85,8 @@ const makeAndPushNewList = () => {
 }
 
 function checkBoxFunction (e){
-    
+    //PLAY  audio 
+    audio.play();
     //find new item from checkbox
     let current = e.path[1];
     let parent = current.parentElement;
